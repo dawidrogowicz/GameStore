@@ -1,7 +1,8 @@
 package com.rogowiczdawid.gamestore.services;
 
 import java.util.List;
-import com.rogowiczdawid.gamestore.entities.User;
+
+import com.rogowiczdawid.gamestore.models.User;
 
 public interface UserService {
 

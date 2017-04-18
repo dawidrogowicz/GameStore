@@ -2,7 +2,7 @@ package com.rogowiczdawid.gamestore.dao;
 
 import java.util.List;
 
-import com.rogowiczdawid.gamestore.entities.User;
+import com.rogowiczdawid.gamestore.models.User;
 
 public interface UserDao {
 	public User getUser(int id);

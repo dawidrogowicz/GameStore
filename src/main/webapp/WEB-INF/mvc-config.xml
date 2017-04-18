@@ -10,10 +10,13 @@
 		http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context 
 		http://www.springframework.org/schema/context/spring-context.xsd
-		http://www.springframework.org/schema/tx
-		http://www.springframework.org/schema/tx/spring-tx.xsd">
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+	<context:component-scan base-package="com.rogowiczdawid.gamestore" />
 
 	<mvc:annotation-driven />
+
 	<mvc:resources location="/resources/" mapping="/resources/**" />
 
 	<bean
@@ -22,44 +25,15 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
-	<!-- Database -->
-	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<!--Database -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/gamestore_database" />
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/gamestore_database" />
 		<property name="username" value="root" />
 		<property name="password" value="root" />
 	</bean>
 
-	<!-- Hibernate sessionFactory -->
-	<bean id="hibernate4AnnotatedSessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-		<property name="dataSource" ref="dataSource" />
-		<property name="annotatedClasses">
-			<list>
-				<value>com.rogowiczdawid.gamestore.entities.User</value>
-			</list>
-		</property>
-		<property name="hibernateProperties">
-			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
-				<prop key="hibernate.show_sql">true</prop>
-			</props>
-		</property>
-	</bean>
-
-	<bean id="userDao" class="com.rogowiczdawid.gamestore.dao.UserDaoImpl">
-		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
-	</bean>
-
-	<bean id="userService" class="com.rogowiczdawid.gamestore.services.UserServiceImpl">
-		<property name="userDao" ref="userDao" />
-	</bean>
-
-	<context:component-scan base-package="com.rogowiczdawid.gamestore" />
-
-	<tx:annotation-driven transaction-manager="transactionManager" />
-
-	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
-	</bean>
 
 </beans>

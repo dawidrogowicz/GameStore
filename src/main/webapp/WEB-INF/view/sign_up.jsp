@@ -10,9 +10,12 @@
 Registration
 <br>
 	<div class="registration">
-		<form action="/sign_up" method="POST">
+		<form action="/register" method="POST">
+		username: 
 			<input type="text" name="username">
+		email:
 			<input type="text" name="email">
+		pass:
 			<input type="password" name="password">
 			<input type="password" name="rep_password">
 			

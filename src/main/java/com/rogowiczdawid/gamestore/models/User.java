@@ -26,6 +26,14 @@ public class User {
 	@Column(name="reg_date")
 	private Date reg_date;
 	
+	/////Constructors/////
+	public User(){}
+	public User(String user, String pass, String email){
+		this.setUsername(user);
+		this.setEmail(email);
+		this.setPassword(pass);
+	}
+	
 	//////Getters/////
 	public int getId() {
 		return id;

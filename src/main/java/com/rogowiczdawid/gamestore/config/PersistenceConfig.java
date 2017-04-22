@@ -56,6 +56,7 @@ public class PersistenceConfig {
 		return new PersistenceExceptionTranslationPostProcessor();
 	}
 
+	@SuppressWarnings("serial")
 	Properties hibernateProperties() {
 		return new Properties() {
 			{

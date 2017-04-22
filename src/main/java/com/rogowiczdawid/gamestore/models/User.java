@@ -1,7 +1,6 @@
 package com.rogowiczdawid.gamestore.models;
 
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,25 +10,20 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="users")
-public class User {
+public class User{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id")
 	private int id;
-	@Column(name="username")
-	private String username;
-	@Column(name="password")
+	private String name;
 	private String password;
-	@Column(name="email")
 	private String email;
-	@Column(name="reg_date")
 	private Date reg_date;
 	
 	/////Constructors/////
 	public User(){}
 	public User(String user, String pass, String email){
-		this.setUsername(user);
+		this.setName(user);
 		this.setEmail(email);
 		this.setPassword(pass);
 	}
@@ -38,8 +32,8 @@ public class User {
 	public int getId() {
 		return id;
 	}
-	public String getUsername() {
-		return username;
+	public String getName() {
+		return name;
 	}
 	public String getPassword() {
 		return password;
@@ -55,8 +49,8 @@ public class User {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public void setPassword(String password) {
 		this.password = password;

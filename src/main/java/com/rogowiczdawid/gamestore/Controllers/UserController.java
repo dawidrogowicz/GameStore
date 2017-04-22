@@ -31,7 +31,7 @@ public class UserController {
 		l = userService.getUsersList();
 		String s = "";
 		for(User u : l){
-			s += u.getUsername()+" "+u.getReg_date()+"   ";
+			s += u.getName()+" "+u.getReg_date()+"   ";
 		}
 		if(s != "")	return s;
 		else return "nope";
@@ -53,9 +53,19 @@ public class UserController {
 	}
 	
 	@RequestMapping("/del/{id}")
-	public String res(@PathVariable(value="id")int id){
+	public String res(@PathVariable int id){
 		userService.removeUser(id);
 		return "forward:../test";
+	}
+	
+	@RequestMapping("test/{name}")
+	@ResponseBody
+	public String aww(@PathVariable String name){
+		String s = "";
+		for(User u : userService.getUserByName(name)){
+			s += "  /////  "+u.getName()+u.getId();
+		}
+		return s;
 	}
 	
 

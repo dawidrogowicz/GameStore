@@ -1,7 +1,10 @@
 C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\Controllers\UserController.java
+C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\dao\IGenericDAO.java
 C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\services\UserService.java
 C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\dao\UserDao.java
+C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\dao\GenericHibernateDAO.java
 C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\services\UserServiceImpl.java
+C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\dao\AbstractHibernateDAO.java
 C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\config\PersistenceConfig.java
 C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\dao\UserDaoImpl.java
 C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\Controllers\MainController.java

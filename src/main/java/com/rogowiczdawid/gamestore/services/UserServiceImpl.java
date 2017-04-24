@@ -7,17 +7,36 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.rogowiczdawid.gamestore.dao.IGenericDAO;
 import com.rogowiczdawid.gamestore.models.User;
+import com.rogowiczdawid.gamestore.models.UserDTO;
 
 @Service
 @Transactional
 public class UserServiceImpl implements UserService {
-	
+
 	private IGenericDAO<User> dao;
-	
+
 	@Autowired
-	public void setDao(IGenericDAO<User> daoToSet){
+	public void setDao(IGenericDAO<User> daoToSet) {
 		dao = daoToSet;
 		dao.setClazz(User.class);
+	}
+
+	@Override
+	public User registerNewUser(UserDTO accountDto) throws EmailExistsException {
+
+		if (emailExists(accountDto.getEmail()))
+			throw new EmailExistsException("Email adress " + accountDto.getEmail() + " already exists");
+
+		return null;
+	}
+
+	private boolean emailExists(String email) {
+		List<User> list = dao.findByEmail(email);
+
+		if (list.size() > 0)
+			return true;
+
+		return false;
 	}
 
 	@Override
@@ -39,9 +58,9 @@ public class UserServiceImpl implements UserService {
 	public User getUser(int id) {
 		return this.dao.findOne(id);
 	}
-	
+
 	@Override
-	public List<User> getUserByName(String name){
+	public List<User> getUserByName(String name) {
 		return this.dao.findByName(name);
 	}
 
@@ -49,5 +68,4 @@ public class UserServiceImpl implements UserService {
 	public List<User> getUsersList() {
 		return this.dao.findAll();
 	}
-
 }

@@ -22,7 +22,7 @@ public class MainController {
 
 	@RequestMapping("/")
 	public String showMain() {
-		return "main_site";
+		return "index";
 	}
 	
 	@RequestMapping("/sign_up")

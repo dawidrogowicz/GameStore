@@ -3,7 +3,6 @@ package com.rogowiczdawid.gamestore.services;
 import java.util.List;
 
 import com.rogowiczdawid.gamestore.models.User;
-import com.rogowiczdawid.gamestore.models.UserDTO;
 
 public interface UserService {
 
@@ -13,6 +12,5 @@ public interface UserService {
 	public User getUser(int id);
 	public List<User> getUsersList();
 	List<User> getUserByName(String name);
-	public User registerNewUser(UserDTO accountDto);
 	
 }

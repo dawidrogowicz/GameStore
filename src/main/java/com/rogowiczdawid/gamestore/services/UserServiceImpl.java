@@ -7,47 +7,42 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.rogowiczdawid.gamestore.dao.IGenericDAO;
 import com.rogowiczdawid.gamestore.models.User;
+import com.rogowiczdawid.gamestore.models.UserDTO;
+import com.rogowiczdawid.gamestore.validation.EmailExistsException;
 
 @Service
 @Transactional
 public class UserServiceImpl implements UserService {
-	
+
 	private IGenericDAO<User> dao;
-	
+
 	@Autowired
-	public void setDao(IGenericDAO<User> daoToSet){
+	public void setDao(IGenericDAO<User> daoToSet) {
 		dao = daoToSet;
 		dao.setClazz(User.class);
 	}
 
 	@Override
-	public void updateUser(User u) {
-		this.dao.update(u);
+	public User registerNewUser(UserDTO accountDto) throws EmailExistsException {
+
+		if (emailExists(accountDto.getEmail()))
+			throw new EmailExistsException("account with email: " + accountDto.getEmail() + " already exists");
+
+		User user = new User();
+		user.setName(accountDto.getName());
+		user.setPassword(accountDto.getPassword());
+		user.setEmail(accountDto.getEmail());
+
+		return dao.create(user);
 	}
 
-	@Override
-	public void addUser(User u) {
-		this.dao.create(u);
-	}
+	private boolean emailExists(String email) {
 
-	@Override
-	public void removeUser(int id) {
-		this.dao.deleteById(id);
-	}
+		List<User> users = dao.findByEmail(email);
+		if (users.size() > 0)
+			return true;
 
-	@Override
-	public User getUser(int id) {
-		return this.dao.findOne(id);
-	}
-	
-	@Override
-	public List<User> getUserByName(String name){
-		return this.dao.findByName(name);
-	}
-
-	@Override
-	public List<User> getUsersList() {
-		return this.dao.findAll();
+		return false;
 	}
 
 }

@@ -1,6 +1,8 @@
 package com.rogowiczdawid.gamestore.models;
 
 import java.util.Date;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,6 +20,7 @@ public class User{
 	private String password;
 	private String email;
 	private Date reg_date;
+	private List<String> roles;
 	
 	/////Constructors/////
 	public User(){}
@@ -59,5 +62,11 @@ public class User{
 	}
 	public void setReg_date(Date reg_date) {
 		this.reg_date = reg_date;
+	}
+	public List<String> getRoles() {
+		return roles;
+	}
+	public void setRoles(List<String> roles) {
+		this.roles = roles;
 	}	
 }

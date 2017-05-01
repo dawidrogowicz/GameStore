@@ -1,8 +1,6 @@
 package com.rogowiczdawid.gamestore.services;
 
-import java.util.Arrays;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,7 +31,7 @@ public class UserServiceImpl implements UserService {
 		user.setName(accountDto.getName());
 		user.setPassword(accountDto.getPassword());
 		user.setEmail(accountDto.getEmail());
-		user.setRoles(Arrays.asList("USER"));
+		user.setRole("USER");
 		
 		return dao.create(user);
 	}

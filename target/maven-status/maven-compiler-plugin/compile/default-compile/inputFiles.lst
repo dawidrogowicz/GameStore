@@ -1,12 +1,15 @@
 C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\config\MVCConfig.java
 C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\Controllers\UserController.java
+C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\services\MyUserDetailsService.java
 C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\services\UserService.java
-C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\services\UserDetailsServiceImpl.java
+C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\models\Product.java
 C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\dao\GenericHibernateDAO.java
 C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\dao\AbstractHibernateDAO.java
 C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\config\PersistenceConfig.java
 C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\config\ThymeleafConfig.java
 C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\validation\ValidEmail.java
+C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\services\ProductServiceImpl.java
+C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\services\ProductService.java
 C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\dao\IGenericDAO.java
 C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\validation\PasswordMatchValidator.java
 C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\models\UserDTO.java

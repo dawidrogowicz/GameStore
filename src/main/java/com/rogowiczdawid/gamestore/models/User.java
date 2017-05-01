@@ -8,56 +8,75 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="users")
-public class User{
-	
+@Table(name = "users")
+public class User {
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
 	private String password;
 	private String email;
 	private Date reg_date;
-	
-	/////Constructors/////
-	public User(){}
-	public User(String user, String pass, String email){
+	private String role;
+
+	///// Constructors/////
+	public User() {
+	}
+
+	public User(String user, String pass, String email) {
 		this.setName(user);
 		this.setEmail(email);
 		this.setPassword(pass);
 	}
-	
-	//////Getters/////
+
+	////// Getters/////
 	public int getId() {
 		return id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public String getPassword() {
 		return password;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public Date getReg_date() {
 		return reg_date;
 	}
-	
-	/////Setters//////
+
+	///// Setters//////
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public void setReg_date(Date reg_date) {
 		this.reg_date = reg_date;
-	}	
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
 }

@@ -2,6 +2,7 @@ package com.rogowiczdawid.gamestore.services;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.rogowiczdawid.gamestore.dao.IGenericDAO;
@@ -13,6 +14,8 @@ import com.rogowiczdawid.gamestore.validation.EmailExistsException;
 @Transactional
 public class UserServiceImpl implements UserService {
 
+	@Autowired
+	private PasswordEncoder encoder;
 	private IGenericDAO<User> dao;
 
 	@Autowired
@@ -29,7 +32,7 @@ public class UserServiceImpl implements UserService {
 
 		User user = new User();
 		user.setName(accountDto.getName());
-		user.setPassword(accountDto.getPassword());
+		user.setPassword(encoder.encode(accountDto.getPassword()));
 		user.setEmail(accountDto.getEmail());
 		user.setRole("USER");
 		

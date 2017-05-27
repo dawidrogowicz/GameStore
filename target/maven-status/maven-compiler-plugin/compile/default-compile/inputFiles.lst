@@ -11,6 +11,7 @@ C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowicz
 C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\validation\PasswordMatches.java
 C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\listeners\AuthenticationSuccessListener.java
 C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\config\SecurityConfig.java
+C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\Controllers\ProductController.java
 C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\listeners\SecurityWebApplicationInitializer.java
 C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\config\MVCConfig.java
 C:\Users\Dawid\Documents\Programming\Spring\GameStore\src\main\java\com\rogowiczdawid\gamestore\Controllers\UserController.java

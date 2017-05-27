@@ -18,6 +18,7 @@ import com.rogowiczdawid.gamestore.services.UserService;
 import com.rogowiczdawid.gamestore.validation.EmailExistsException;
 
 @Controller
+@RequestMapping("/user")
 public class UserController {
 
 	@Autowired
@@ -27,14 +28,14 @@ public class UserController {
 		this.userService = us;
 	}
 
-	@RequestMapping(value = "/user/register", method = RequestMethod.GET)
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String regForm(WebRequest request, Model model) {
 		UserDTO userDto = new UserDTO();
 		model.addAttribute("user", userDto);
 		return "register";
 	}
 
-	@RequestMapping(value = "/user/register", method = RequestMethod.POST)
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public ModelAndView registerUserAccount(@ModelAttribute("user") @Valid UserDTO accountDto, BindingResult result,
 			WebRequest request, Errors errors) {
 		User registeredUser = new User();
